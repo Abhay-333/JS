@@ -61,3 +61,42 @@ console.log(null >= 0)
 console.log(undefined == 0)
 console.log(undefined > 0)
 console.log(undefined >= 0)
+
+// ********DATA TYPES*************
+
+let temp = null // Null
+let Numb = 100 // Number
+let undef; // undefined
+let BigNumber = 10984092340923094720n  //BigInt
+let Symbl = Symbol('123') // Symbol
+let anotherSymbl = Symbol('123') // Symbol
+
+
+// ********MEMORIES*************
+// ********STACK & HEAP*************
+
+// Every variable that we create goes in stack and  every non-primitive data type we create stores in stack and gets the reference of that value in the heap memory
+
+let userOne = {
+    email: "abhay@gmail.com",
+    age:23,
+}
+
+let userTwo = userOne
+userTwo.email = "userOne.gmail.com"
+
+// As u can see the output userTwo is getting the reference of userOne thats y there is change in the output 
+
+console.log(userOne);
+console.log(userTwo);
+
+// Summary In Stack memory we get the copy of that variable and in Heap memory we get reference of that variable (reference - means that the actual changes we do the changes are done in original value)
+
+
+// ********STRING*************
+
+let str = "Abhay"
+let str1 = new String("Ramesh")
+
+console.log(str.__proto__);
+console.log(str1.split(""));
