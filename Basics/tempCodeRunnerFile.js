@@ -1,2 +1,4 @@
-s element at the ending of the array
-// arr.shift() // remove
+eys(insta));
+// console.log(Object.values(insta));
+// console.log(Object.entries(insta));
+// console.log(insta.ha
