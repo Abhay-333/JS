@@ -47,7 +47,7 @@ console.log(addOne(4));
 function addOne(value){
     return value + 1
 }
-                                                //Hoisting
+//Hoisting
 console.log(addTwo(4));
 const addTwo = function(value){
     return value + 2
