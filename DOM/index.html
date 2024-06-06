@@ -1,23 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DOM</title>
     <style>
         body{
-            background-color: #141313f8;
-            color:white;
+            background-color: rgb(48, 47, 47);
+            color: white;
         }
+
+        .one span{
+            font-weight: bold;
+            font-family: sans-serif;
+            display: none;
+        }
+        
     </style>
 </head>
-
 <body>
+    
+    <h1 id="one" class="one">DOM Manipulation with <span>Abhay</span> </h1>
 
-    <h1>DOM Manipulation</h1>
+    <ul>
+        <li class="list-item">One</li>
+        <li class="list-item">Two</li>
+        <li class="list-item">Three</li>
+        <li class="list-item">Four</li>
+    </ul>
 
-    <script src="script.js"></script>
+    <script>
+        const heading = document.querySelector('#one')
+        heading.setAttribute('class', 'one two')
+        
+        console.log(heading.innerHTML);     // innerHTML give the text in side it and the syntax of its child tags 
+
+        console.log(heading.textContent);       // is used to know the text of all the child inside it even if the display none property is    given to the element  
+        console.log(heading.innerText);         // is used to know the text of that element not its child's
+
+        const myUl = document.querySelector('body ul')
+        myUl.style.backgroundColor= "green"
+        
+        const myLi = document.querySelectorAll('body ul li')  // gives a Node List which has all the li's in it. NodeList? What is NodeList it looks like a array but its not array
+
+        // myLi[3].style.color = "red" 
+
+        // myLi.forEach((li)=>{
+        //     li.style.color = "lightGreen"
+        // }) 
+
+        const lt = document.getElementsByClassName('list-item')
+        console.log(lt)         // We get here HTMLCollection which is different from the Nodelist. To put a loop on HTMLCollection we need to convert it into Array
+
+        const ltArr = Array.from(lt)
+        console.log(ltArr)      // Now the lt HTMLCollection is converted into Array
+
+        ltArr.map((l)=>(
+            l.textContent = "F Song"
+        ))
+
+    </script>
 </body>
-
 </html>
