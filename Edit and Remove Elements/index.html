@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: #212121;
+            color: white;
+        }
+
+        .btn {
+            padding: 20px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-family: sans-serif;
+            background-color: #32a5d6;
+            color: white;
+            cursor: pointer;
+        }
+
+        .rmv {
+            padding: 20px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-family: sans-serif;
+            background-color: #32a5d6;
+            color: white;
+            cursor: pointer;
+        }
+
+        body input {
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-family: sans-serif;
+            cursor: pointer;
+            width: 50vw;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="">
+        <input type="text" placeholder="Enter the Name of Any Language To add it on the List">
+
+        <ul class="languages">
+            <li>JavaScript</li>
+            <li>C</li>
+        </ul>
+
+        <button class="btn">Add Language To List</button>
+
+        <button class="rmv">Remove From this List</button>
+
+    </form>
+
+    <script>
+        const ul = document.querySelector('.languages')
+        const btn = document.querySelector('.btn')
+        const rmv = document.querySelector('.rmv')
+        const inp = document.querySelector('body form input')
+        const form = document.querySelector('body form')
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+
+            const inpVal = () => {
+
+                if (inp.value.trim() === '') {
+                    return inp.value = ""
+                }
+                else {
+                    return inp.value
+                }
+            }
+            // addLanguage(inpVal())
+            addAnyThing(inpVal())
+        })
+
+        // function addLanguage(langName) {
+        //     const createdElem = document.createElement('li')
+        //     createdElem.innerHTML = `${langName}`
+        //     ul.appendChild(createdElem)
+        // }
+
+        function addAnyThing(Any) {
+            if (Any === "") {
+                return alert("Please part2")
+            }
+            else {
+                const li = document.createElement('li')
+                li.appendChild(document.createTextNode(Any))
+                ul.appendChild(li)
+            }
+        }
+
+        // Edit
+        const firstLang = document.querySelector('.languages li')
+        // firstLang.innerHTML = "Go Lang"     //Not good practice 
+
+        const newli = document.createElement('li')
+        // newli.appendChild(document.createTextNode('Python'))
+        newli.textContent = "C++"
+        firstLang.replaceWith(newli)        
+
+        const secondLang = document.querySelector('li:last-child')
+        secondLang.outerHTML = "<li>C#</li>"
+        secondLang.remove()
+
+    </script>
+
+</body>
+
+</html>
