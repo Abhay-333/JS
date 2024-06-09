@@ -1,0 +1,7 @@
+js is a synchronous and a single threaded language. This is for pure js, now js we are using is from node js or in browser js
+1. In js each operation waits for the last operation to complete before execution
+2. Blocking code vs Non Blocking Code
+3. Blocking code -> Block the flow of the program  
+3. Blocking code -> Read file sync  
+4. Non-Blocking code -> Does not Block the flow of the program 
+4. Non-Blocking code -> Read file async

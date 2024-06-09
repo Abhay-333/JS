@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async js</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: white;
+        }
+
+        body button {
+            background-color: rgb(32, 167, 221);
+            padding: 10px 25px;
+            font-weight: 700;
+            font-size: 1.3vw;
+            color: white;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Abhay</h1>
+
+    <button class="Start">Start</button>
+    <button class="Stop">Stop</button>
+
+    <script>
+        const stop = document.querySelector('.Stop')
+        const start = document.querySelector('.Start')
+        const h1 = document.querySelector('body h1')
+
+        let time =0;
+
+        // const sayMyName = function (str) {
+        //     h1.innerHTML = "The text here is changed"
+        //     console.log(str)
+        // }
+
+        // const changingText = setTimeout(sayMyName, 3000, "helleo")
+
+        stop.addEventListener('click', function () {
+            // setTimeout(function(){
+            //     console.log("Hi")
+            // },1000)
+
+            // console.log('setTimeout Stopped')
+            // clearTimeout(changingText)
+
+            clearInterval(time)
+
+        })
+
+
+        start.addEventListener('click', function(){
+            time = setInterval(()=>{
+              h1.innerHTML = new Date().toLocaleTimeString()  
+            },1000)
+        })
+
+    </script>
+</body>
+
+</html>
