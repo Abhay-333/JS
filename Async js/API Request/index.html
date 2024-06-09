@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 70vh;
+        width: 30vw;
+        background-color: gray;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0.5vw 3vw;
+    }
+
+    .card img {
+        border-radius: 50%;
+        background-color: red;
+        height: 20vh;
+        width: 10vw;
+    }
+
+    .name {
+        margin-top: 0px;
+    }
+
+    .gender {
+        margin-top: 0px;
+        font-size: 1.5vw;
+    }
+
+    .email {
+        color: rgba(255, 255, 255, 0.712);
+        margin-top: 0px;
+        font-size: 1.5vw;
+    }
+
+    .card p {
+        text-align: center;
+    }
+</style>
+
+<body style="background-color: #212121;  color: white;">
+
+    <h1>Following are the steps to use XMlHttpsRequest</h1>
+    <ol>
+        <li>UNSENT Client has been created. open() not called yet.</li>
+        <li>OPENED open() has been called.</li>
+        <li>HEADERS_RECEIVED send() has been called, and headers and status are available.</li>
+        <li>LOADING Downloading; responseText holds partial data.</li>
+        <li>DONE The operation is complete.</li>
+    </ol>
+
+    <div class="card">
+        <img src="" alt="">
+        <h1 class="name">Name</h1>
+        <h1 class="email">email</h1>
+        <h1 class="gender">gender</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus aperiam doloremque, sunt nesciunt error
+            doloribus ab iure voluptatum dolorum quae, eligendi maiores repellat incidunt magnam? Dolorem aspernatur
+            corrupti repellendus</p>
+    </div>
+
+</body>
+
+<script>
+    const api = `https://randomuser.me/api/`
+    let data;
+    let userName;
+    const request = new XMLHttpRequest()        // for state 0
+    request.open('GET', api)                // for state 3
+    request.onreadystatechange = function () {      // for state 1
+        if (request.readyState == 4) {
+            data = JSON.parse(this.responseText)
+            const title = data.results[0].name.title
+            const firstName = data.results[0].name.first
+            const lastName = data.results[0].name.last
+            userNameArr = [title, firstName, lastName]
+            // const userName = userNameArr.reduce((acc, cv)=>(acc+cv))         // Another method to covert array into string
+            const userName = userNameArr.join(' ')
+            
+            const EmailData = data.results[0].email
+            const genderData = data.results[0].gender
+            const imgData = data.results[0].picture.large
+
+            name.innerHTML = userName
+            email.innerHTML = EmailData
+            gender.innerHTML = genderData
+
+            const image = document.querySelector('.card img').src       // This will not work
+            document.querySelector('.card img').src = data.results[0].picture.large
+            // image.innerHTML = imgData 
+        }
+        }
+        request.send()              // for state 4
+        
+        const name = document.querySelector('.name')
+        const email = document.querySelector('.email')
+        const gender = document.querySelector('.gender')
+        
+</script>
+
+
+</html>
