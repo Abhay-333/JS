@@ -1,0 +1,9 @@
+The default behaviour of js is prototype behaviour
+isska matlab hai agar aap koi chizz js mey dund rahe ho aur vo mil nahi rahi toh js usske ek level uppar jati hai aur uus chiiz ko vaha pe search krti hai jabtak ki uss ko null value nahi miljati 
+issi ki vajah se arrow function ke aandar this ki value nahi milthi
+
+Remember
+Because of prototype, we can use the following things
+ |
+ v
+new,this, classes, prototypal inheritance
