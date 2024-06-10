@@ -1,0 +1,28 @@
+js and classes 
+
+what is OOP 
+1. Object Oriented Programming
+2. It is a Programming paradigm means it is a style to write the code in a specified structure just like procedural Programming, structural Programming, modular Programming
+
+Object ? 
+Collection of properties or methods
+
+Why OOP in js
+SomeTimes js code gets messed up
+
+parts of OOP
+Object literal - {}   // literal means one object
+
+Constructor function
+Prototypes
+classes
+Instances(new,this)
+
+4 pillars of OOP 
+1.Abstraction
+2.Encapsulation
+3.Inheritance
+4.Polymorphism - poly means many and morphsim means (rup - hindi), Polymorphism - bohot rup
+
+
+Constructor function - allows u to make multiple Instances for one object literal  
