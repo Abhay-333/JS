@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+
+<body>
+
+    <button>Click Here</button>
+
+    <script>
+        class React {
+            constructor(library, server) {
+                this.library = library
+                this.server = server
+
+                document.querySelector('button').addEventListener('click', this.handleClick.bind(this))
+            }
+
+            handleClick() {
+                console.log(`button was clicked`)
+                console.log(this.server)        // before adding .bind to handleClick in the constructor, we get undefined values and after adding .bind we get the actual values
+                console.log(this.library)
+            }
+        }
+
+        const app = new React("tailwind css", "https://Localhost:5000")
+    </script>
+</body>
+
+</html>
